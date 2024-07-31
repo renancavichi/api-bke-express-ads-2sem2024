@@ -1,0 +1,25 @@
+{
+  "name": "api-bke-express-ads-2sem2024",
+  "version": "1.0.0",
+  "description": "API Node com framework Express",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renancavichi/api-bke-express-ads-2sem2024.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "express",
+    "zod"
+  ],
+  "author": "Renan Cavichi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renancavichi/api-bke-express-ads-2sem2024/issues"
+  },
+  "homepage": "https://github.com/renancavichi/api-bke-express-ads-2sem2024#readme"
+}
