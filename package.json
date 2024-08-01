@@ -4,7 +4,7 @@
   "description": "API Node com framework Express",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/renancavichi/api-bke-express-ads-2sem2024/issues"
   },
-  "homepage": "https://github.com/renancavichi/api-bke-express-ads-2sem2024#readme"
+  "homepage": "https://github.com/renancavichi/api-bke-express-ads-2sem2024#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
