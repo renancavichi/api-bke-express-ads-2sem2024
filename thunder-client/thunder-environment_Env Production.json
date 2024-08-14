@@ -1,0 +1,14 @@
+{
+    "clientName": "Thunder Client",
+    "environmentName": "Env Production",
+    "environmentId": "be1f36c3-3853-406c-af16-e4c19ff5d404",
+    "dateExported": "2024-08-14T23:15:55.965Z",
+    "version": "1.2",
+    "variables": [
+        {
+            "name": "BASE_URL",
+            "value": "https://meusite.com"
+        }
+    ],
+    "ref": "7pQV8opltkCmujOQq0jBOro4lnHBcBMgTgaH6ElNLRFJyhvo2vUQLLv2_inPIoS-"
+}
