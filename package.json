@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "API Node com framework Express",
   "main": "src/server.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch src/server.js",
+    "prisma:pull": "npx prisma db pull",
+    "prisma:generate": "npx prisma generate"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,10 @@
   },
   "homepage": "https://github.com/renancavichi/api-bke-express-ads-2sem2024#readme",
   "dependencies": {
+    "@prisma/client": "^5.18.0",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.18.0"
   }
 }
