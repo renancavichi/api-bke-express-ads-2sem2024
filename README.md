@@ -26,4 +26,8 @@ git remote add origin https://github.com/seugithub/seuprojeto.git
 ```
 npm i prisma -D (instala prisma como dependência de desenvolvimento)
 npx prisma init (inicializa o prisma no projeto prisma/schema.prisma e .env)
+npm install @prisma/client (Instala o cliente do prisma para importação no model)
+npx prisma db pull (gera o modelo a partir do banco criado)
+npx prisma db push (gera o banco a partir do modelo)
+npx prisma generate (cria as classes baseadas no modelo atual)
 ```
