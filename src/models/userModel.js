@@ -13,6 +13,20 @@ export const getAll = async () => {
     return users
 }
 
+export const getById = async (id) => {
+    const user = await prisma.user.findUnique({
+        where: {
+           id 
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true
+        }
+    })
+    return user
+}
+
 export const create = () => {
 
 }
