@@ -2,7 +2,6 @@ import { getById } from "../../models/userModel.js"
 
 const userById = async (req, res) => {
     const {id}  = req.params
-    
     const user =  await getById(+id)
 
     if(user)

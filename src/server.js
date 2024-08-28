@@ -6,6 +6,11 @@ import { PORT, HOST, ENVIRONMENT } from './config.js'
 
 const app = express()
 
+// middle que converte o request body json para objeto
+app.use(express.json())
+
+app.get('/', (req, res) => { res.json({message: "Bem vindo a API"})})
+
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 
