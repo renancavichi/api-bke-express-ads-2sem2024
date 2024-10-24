@@ -7,10 +7,12 @@ import welcome from './controllers/welcome.js'
 import routeNotFounded from './controllers/routeNotFounded.js'
 import errorHandler from './middlewares/errorHandler.js'
 import { PORT, HOST, ENVIRONMENT } from './config.js'
+import cors from 'cors'
 
 const app = express()
 
 app.use(logger)
+app.use(cors())
 // middleware que converte o request body json para objeto
 app.use(express.json())
 
