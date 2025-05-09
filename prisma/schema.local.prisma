@@ -13,4 +13,12 @@ model user {
   name      String @db.VarChar(100)
   email     String @unique(map: "email_UNIQUE") @db.VarChar(200)
   pass      String @db.VarChar(256)
+  sessions  session[]
+}
+
+model session {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  userId    Int
+  user      user     @relation(fields: [userId], references: [id])
 }

@@ -1,4 +1,5 @@
 import { validateUserToLogin, getByEmail } from "../../models/userModel.js"
+import { create } from "../../models/sessionModel.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { SECRET_KEY } from "../../config.js"
@@ -32,21 +33,13 @@ const login = async (req, res, next) => {
             })
         }
 
-        const token = jwt.sign({name: user.name, publicId: user.public_id}, SECRET_KEY, { expiresIn: 60 * 5})
+        const session = await create(user.id)
 
-        console.log(token)
-        return res.json({token})
+        const actionToken = jwt.sign({name: user.name, publicId: user.public_id}, SECRET_KEY, { expiresIn: '15m'})
+        const refreshToken = jwt.sign({publicId: user.public_id, session: session.id}, SECRET_KEY, { expiresIn: '2d'})
 
-
-        if(!result)
-            return res.status(500).json({
-                error: "Erro ao criar usuário"
-            })
-
-        return res.json({
-            success: "Usuário criado com sucesso!",
-            user: result
-        })
+        res.cookie('refreshToken', refreshToken, { httpOnly: true, sameSite: 'None', secure: true, maxAge: 2 * 24 * 60 * 60 * 1000 })
+        return res.json({actionToken, refreshToken, user: {name: user.name, email: user.email, publicId: user.public_id}})
     } catch(error) {
         console.log(error)
         if(error?.code === 'P2002')

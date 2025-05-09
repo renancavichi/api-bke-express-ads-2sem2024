@@ -13,7 +13,8 @@
     "prisma:local:studio": "npx prisma studio --schema=./prisma/schema.local.prisma",
     "prisma:pull": "npx prisma db pull --schema=./prisma/schema.production.prisma",
     "prisma:push": "npx prisma db push --schema=./prisma/schema.production.prisma",
-    "prisma:generate": "npx prisma generate --schema=./prisma/schema.production.prisma"
+    "prisma:generate": "npx prisma generate --schema=./prisma/schema.production.prisma",
+    "studio": "npx prisma studio --schema=./prisma/schema.local.prisma"
   },
   "repository": {
     "type": "git",
